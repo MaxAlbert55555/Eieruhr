@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Weiterleitung auf die WWW-Subdomain
+RewriteCond %{HTTP_HOST} !^www\.das-perfekte-ei\.free\.nf$ [NC]
+RewriteRule ^(.*)$ https://www.das-perfekte-ei.free.nf/$1 [L,R=301]
+
+# Weiterleitung auf HTTPS
+RewriteCond %{SERVER_PORT} !=443
+RewriteRule ^(.*)$ https://www.das-perfekte-ei.free.nf/$1 [R=301,L]
+
+# Entfernen von URL-Parametern
+RewriteCond %{QUERY_STRING} ^i=1$
+RewriteRule ^(.*)$ https://www.das-perfekte-ei.free.nf/$1? [R=301,L]
