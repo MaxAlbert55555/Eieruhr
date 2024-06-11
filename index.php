@@ -66,20 +66,19 @@
 
     <div class="container-4">
       <h2 class="center">
-        <label for="size">Leg dein Ei auf den Display und schau welche Schablone passt. :)</label>
+        <label for="size">Wie groß ist dein Ei? :)</label>
       </h2>
-      <p style="font-size:0.8rem;line-height:normal;position:absolute;">*U steht für Umfang und ist in Zentimeter angegeben.</p>
       <!-- Input Feld für die Eigröße -->
       <input type="text" id="size" name="size" value="XS" readonly hidden>
       <!-- Swiper Eierrahmen -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" data-size="XS"><img src="images/content/frames/xs.png" style="width:auto;height:auto;" alt="xs-Ei-Rahmen"></div>
-          <div class="swiper-slide" data-size="S"><img src="images/content/frames/s.png" style="width:auto;height:auto;" alt="s-Ei-Rahmen"></div>
-          <div class="swiper-slide" data-size="M"><img src="images/content/frames/m.png" style="width:auto;height:auto;" alt="m-Ei-Rahmen"></div>
-          <div class="swiper-slide" data-size="L"><img src="images/content/frames/l.png" style="width:auto;height:auto;" alt="l-Ei-Rahmen"></div>
-          <div class="swiper-slide" data-size="XL"><img src="images/content/frames/xl.png" style="width:auto;height:auto;" alt="xl-Ei-Rahmen"></div>
-          <div class="swiper-slide" data-size="XXL"><img src="images/content/frames/xxl.png" style="width:auto;height:auto;" alt="xxl-Ei-Rahmen"></div>        </div>
+          <div class="swiper-slide" data-size="XS"><img src="images/content/frames/xs.png" style="width:175px;height:auto;" alt="xs-Ei-Rahmen"></div>
+          <div class="swiper-slide" data-size="S"><img src="images/content/frames/s.png" style="width:190px;height:auto;" alt="s-Ei-Rahmen"></div>
+          <div class="swiper-slide" data-size="M"><img src="images/content/frames/m.png" style="width:205px;height:auto;" alt="m-Ei-Rahmen"></div>
+          <div class="swiper-slide" data-size="L"><img src="images/content/frames/l.png" style="width:220px;height:auto;" alt="l-Ei-Rahmen"></div>
+          <div class="swiper-slide" data-size="XL"><img src="images/content/frames/xl.png" style="width:235px;height:auto;" alt="xl-Ei-Rahmen"></div>
+          <div class="swiper-slide" data-size="XXL"><img src="images/content/frames/xxl.png" style="width:250px;height:auto;" alt="xxl-Ei-Rahmen"></div>        </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>

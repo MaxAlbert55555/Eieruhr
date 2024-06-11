@@ -326,7 +326,6 @@ input:checked ~ .temperatur .room {
     left:50%;
     top:50%;
     transform: translate(-50%, -50%);
-    opacity:0.5;
     max-width: none;
     max-height: none;
   }

@@ -16,6 +16,12 @@
     <?php include('include/favicon.php'); ?>
 </head>
 <body>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] != "POST") {
+        header("Location: https://das-perfekte-ei.free.nf");
+        exit();
+    }
+    ?>
     <div class="GoBackBtn" onclick="history.back()">x</div>
     <div class="upper-curve"></div>
     <div class="bottom-curve"></div>
@@ -41,7 +47,6 @@
         // Formel zur Berechnung des Siedepunkts von Wasser
         return 100 - ($hoehe / 285);
     }
-
     function berechneKochzeit($temperatur, $hoehe, $groesse, $haerte) {
         // Durchmesser in mm basierend auf der Größe
         $GROESSE_DURCHMESSER = array(
@@ -52,14 +57,12 @@
             "XL" => 49,
             "XXL" => 55
         );
-
         // Temperatur des Eies vor Kochbeginn
         $TEMP_START = array(
             "fridge" => 5,
             "room" => 21
         );
-
-// Zieltemperatur des Eigelbs nach Kochvorgang basierend auf der Härte
+        // Zieltemperatur des Eigelbs nach Kochvorgang basierend auf der Härte
         if ($haerte <= 40) {
             $T_innen = 62 * ($haerte / 40); // Flüssiger Dotter von 0 bis 62°C
         } elseif ($haerte <= 55) {
@@ -67,18 +70,14 @@
         } else {
             $T_innen = 67 + (82 - 67) * (($haerte - 55) / 45); // Hartes Ei von 67 bis 82°C
         }
-
         // Berechnete Werte
         $d = $GROESSE_DURCHMESSER[$groesse];
         $T_wasser = berechneSiedepunkt($hoehe);
         $T_start = $TEMP_START[$temperatur];
-
         // Kochzeit in Minuten nach der Formel von Werner Gruber
         $kochzeitMinuten = 0.0016 * pow($d, 2) * log((2 * ($T_wasser - $T_start)) / ($T_wasser - $T_innen));
-
         // Umwandlung in Sekunden für die Ausgabe
         $kochzeitSekunden = round($kochzeitMinuten * 60);
-
         return $kochzeitSekunden;
     }
 
